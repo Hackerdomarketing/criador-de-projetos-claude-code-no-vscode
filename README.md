@@ -12,52 +12,15 @@ Depois de instalar, você abre o Claude Code no VS Code, diz algo como *"criar u
 
 ---
 
-## O que você precisa ter antes de instalar
+## Instalação
 
-Apenas uma coisa: o **VS Code com a extensão Claude Code** instalada e funcionando.
+Abra o **Claude Code no VS Code** e diga exatamente isso:
 
-Tudo o mais que o sistema precisa — Node.js, GitHub CLI, autenticação no GitHub — o instalador verifica e instala automaticamente. Você não precisa fazer nada disso na mão.
+> **"Instala isso pra mim: https://github.com/Hackerdomarketing/criador-de-projetos-claude-code-no-vscode"**
 
-Se você ainda não tem o VS Code: baixe em https://code.visualstudio.com. Depois, dentro do VS Code, instale a extensão **Claude Code** pela aba de extensões (o ícone de 4 quadradinhos na barra lateral esquerda do VS Code).
+Pronto. O Claude vai baixar os arquivos e instalar tudo automaticamente — Node.js, GitHub CLI, autenticação no GitHub. Se precisar de alguma confirmação ou senha durante o processo, ele vai pedir na hora.
 
----
-
-## Instalando o sistema
-
-### No Mac
-
-Abra o **Terminal** — pressione **Command + Espaço**, escreva **Terminal** e pressione Enter. Uma janela escura vai abrir. É aqui onde você vai digitar os comandos.
-
-Cole estes três comandos, um por vez, pressionando Enter após cada um:
-
-**Passo 1 — Baixar os arquivos:**
-```
-cd ~/Downloads && git clone https://github.com/Hackerdomarketing/criador-de-projetos-claude-code-no-vscode.git
-```
-
-**Passo 2 — Entrar na pasta baixada:**
-```
-cd ~/Downloads/criador-de-projetos-claude-code-no-vscode
-```
-
-**Passo 3 — Rodar o instalador:**
-```
-bash instalar.sh
-```
-
-O instalador vai verificar automaticamente tudo que está instalado no seu computador e vai instalar o que estiver faltando. Se precisar de alguma autorização — senha do computador, confirmação de instalação — ele vai pedir na hora e explicar o que está fazendo. Você só precisa acompanhar e confirmar quando pedido.
-
-### No Windows
-
-No Windows, você precisa de um programa chamado **Git for Windows** antes de rodar o instalador. Ele instala o Git (necessário para criar repositórios) e um terminal chamado **Git Bash**, que é onde você vai digitar os comandos.
-
-**Para instalar o Git for Windows:**
-1. Acesse: https://git-scm.com/download/win
-2. O download começa automaticamente — abra o arquivo que baixar
-3. Clique **Next** em todas as telas (as opções padrão estão corretas) e depois **Install**
-4. Após instalar, pesquise **Git Bash** no menu Iniciar e abra
-
-Com o Git Bash aberto, cole os mesmos três passos acima — eles funcionam igual ao Mac. O instalador vai verificar automaticamente se Node.js e GitHub CLI estão instalados no seu computador. Se não estiverem, ele vai mostrar exatamente o que você precisa fazer antes de continuar.
+**Se você usa Windows:** antes desse passo, instale o **Git for Windows** em https://git-scm.com/download/win — clique em Next em todas as telas. O Git é necessário para baixar os arquivos do repositório. Depois é só abrir o Claude Code e falar o comando acima normalmente.
 
 ---
 
@@ -68,10 +31,6 @@ Com o Git Bash aberto, cole os mesmos três passos acima — eles funcionam igua
 Abra o VS Code na pasta `~/Documents/VSCODE/`. É lá que o Claude vai criar os projetos.
 
 No VS Code: **File → Open Folder → Documents → VSCODE → Select Folder**
-
-### Como abrir o Claude Code no VS Code
-
-Na barra lateral esquerda do VS Code, clique no ícone do Claude Code (um "A" estilizado ou o logo da Anthropic). Uma janela de conversa vai abrir do lado.
 
 ### O que dizer para criar um projeto
 
