@@ -5,4 +5,5 @@
 node_modules/
 __pycache__/
 *.py[cod]
-.memoria-*.md
+/.memoria-*.md
+!templates/.memoria-*.md
