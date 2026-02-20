@@ -1,58 +1,115 @@
-# CRIADOR DE PROJETOS
+# CRIADOR DE PROJETOS — Claude Code no VS Code
 
-Sistema automatizado para criar projetos com estrutura profissional usando Claude Code.
+Ensina o Claude Code a criar projetos completos automaticamente quando você pede.
 
----
-
-## O que é
-
-Quando você diz ao Claude Code frases como "criar um projeto", "novo projeto", ou "quero criar", ele ativa automaticamente este sistema e cria toda a estrutura do projeto para você — pasta, arquivos de memória, CLAUDE.md, Git local e repositório privado no GitHub.
+Você diz "quero criar um app de controle financeiro" — e ele cria a pasta, os arquivos, conecta ao GitHub e organiza tudo. Sem você precisar fazer nada manualmente.
 
 ---
 
-## Como ativar
+## O que você precisa ter instalado antes
 
-Diga qualquer uma dessas frases no Claude Code:
+Antes de instalar, confirme que você já tem estes 3 programas:
 
-- "cria um projeto..."
-- "novo projeto..."
-- "quero criar..."
-- "desenvolve um sistema..."
-- "preciso de um..."
-- "monta um..."
-- "faz um app..."
+**1. VS Code com a extensão Claude Code**
+A extensão da Anthropic dentro do VS Code. É com ela que você conversa com o Claude.
+
+**2. Node.js**
+Necessário para o Claude Code funcionar. Baixe em: https://nodejs.org (versão LTS)
+
+**3. GitHub CLI (`gh`)**
+Ferramenta de terminal que permite criar repositórios no GitHub automaticamente.
+
+Para verificar se já está instalado, abra o Terminal e digite:
+```
+gh --version
+```
+Se aparecer um número de versão, está instalado. Se não aparecer, instale com:
+```
+brew install gh
+```
+Depois, conecte ao GitHub (só precisa fazer uma vez):
+```
+gh auth login
+```
+Siga as instruções na tela. Escolha GitHub.com → HTTPS → autentique com o navegador.
+
+---
+
+## Como baixar e instalar
+
+### Passo 1 — Baixar este repositório
+
+No Terminal, cole este comando e pressione Enter:
+
+```
+cd ~/Downloads && git clone https://github.com/Hackerdomarketing/criador-de-projetos-claude-code-no-vscode.git
+```
+
+Isso vai criar uma pasta chamada `criador-de-projetos-claude-code-no-vscode` nos seus Downloads.
+
+### Passo 2 — Abrir a pasta no Terminal
+
+```
+cd ~/Downloads/criador-de-projetos-claude-code-no-vscode
+```
+
+### Passo 3 — Rodar o instalador
+
+```
+bash instalar.sh
+```
+
+Pronto. O instalador vai:
+- Criar a pasta `~/Documents/VSCODE/CRIADOR-DE-PROJETOS/` com todos os arquivos
+- Criar o arquivo `~/Documents/VSCODE/CLAUDE.md` com as instruções do sistema (se você ainda não tiver)
+
+---
+
+## Como usar depois de instalar
+
+**Abra o VS Code** na pasta `~/Documents/VSCODE/` — esta é a pasta onde todos os seus projetos ficam.
+
+**Abra o Claude Code** (a extensão da Anthropic no VS Code).
+
+**Diga qualquer uma dessas frases:**
+
+> "criar um projeto..."
+> "novo projeto..."
+> "quero criar..."
+> "faz um app..."
+> "preciso de um sistema..."
+> "monta um..."
+
+O Claude vai perguntar algumas coisas (o que o projeto faz, qual tecnologia, etc.) e depois criar tudo automaticamente — pasta, arquivos de memória, código inicial, Git e repositório privado no GitHub.
 
 ---
 
 ## O que é criado em cada projeto
 
-| Arquivo | O que faz |
-|---------|-----------|
-| `ARQUITETURA-MENTAL.md` | Como o Claude processa informação neste projeto |
-| `CLAUDE.md` | Instruções do projeto (memória, nomenclatura, comunicação) |
-| `.memoria-ultimas-tarefas.md` | As 3 tarefas mais recentes — leia primeiro |
-| `.memoria-do-dia.md` | Log cronológico do dia |
+Toda vez que você pede um projeto novo, o Claude cria estes arquivos automaticamente:
+
+| Arquivo | Para que serve |
+|---------|---------------|
+| `ARQUITETURA-MENTAL.md` | Como o Claude pensa e processa informação neste projeto |
+| `CLAUDE.md` | Instruções do projeto — memória, comunicação, nomenclatura |
+| `.memoria-ultimas-tarefas.md` | As 3 últimas tarefas feitas (o Claude lê isso primeiro a cada sessão) |
+| `.memoria-do-dia.md` | Registro cronológico do que foi feito hoje |
 | `.memoria-projeto.md` | Memória completa do projeto |
-| `README.md` | Documentação de uso |
-| `.gitignore` | Arquivos a ignorar no Git |
+| `README.md` | Documentação básica do projeto |
+| `.gitignore` | Lista de arquivos que não vão para o GitHub |
 
 ---
 
-## Arquivos desta pasta
+## Dúvidas frequentes
 
-| Arquivo | O que é |
-|---------|---------|
-| `AGENTE.md` | O protocolo completo do agente criador |
-| `REGRA-ATIVACAO.md` | Triggers de ativação automática |
-| `ARQUITETURA-MENTAL.md` | Padrão mental (copiado para cada projeto) |
-| `templates/CLAUDE.md` | Template do CLAUDE.md para novos projetos |
-| `templates/.memoria-ultimas-tarefas.md` | Template de memória de curto prazo |
-| `templates/.memoria-do-dia.md` | Template do log diário |
+**Preciso abrir o VS Code em alguma pasta específica?**
+Sim. Abra o VS Code em `~/Documents/VSCODE/` — é onde os projetos são criados. Se abrir em outra pasta, o sistema ainda funciona, mas os projetos serão criados lá.
 
----
+**O que acontece se eu já tiver um CLAUDE.md?**
+O instalador não apaga o que você já tem. Você pode copiar manualmente o conteúdo de `templates/CLAUDE.md` para o seu CLAUDE.md existente.
 
-## Pré-requisitos
+**Funciona só no Mac?**
+Por enquanto sim. O caminho `~/Documents/VSCODE/` é padrão no macOS. No Windows ou Linux, os caminhos são diferentes.
 
-- [Claude Code](https://github.com/anthropics/claude-code) instalado
-- [GitHub CLI](https://cli.github.com/) instalado e autenticado (`gh auth login`)
-- macOS (ou adaptar os caminhos para Windows/Linux)
+**O repositório criado no GitHub é privado ou público?**
+Sempre privado. Só você vê.
