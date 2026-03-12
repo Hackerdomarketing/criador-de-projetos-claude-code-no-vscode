@@ -24,7 +24,7 @@ Este agente deve ser consultado AUTOMATICAMENTE quando detectar palavras-chave:
 
 ## Ação ao Ativar
 
-1. **LER:** `~/Documents/VSCODE/CRIADOR-DE-PROJETOS/AGENTE.md`
+1. **LER:** `./AGENTE.md`
 2. **SEGUIR:** As perguntas obrigatórias
 3. **APLICAR:** Estrutura padrão de projetos
 4. **ATUALIZAR:** Memória geral após conclusão
@@ -35,7 +35,7 @@ Este agente deve ser consultado AUTOMATICAMENTE quando detectar palavras-chave:
 
 | Arquivo | Caminho |
 |---------|---------|
-| Regras do Agente | `~/Documents/VSCODE/CRIADOR-DE-PROJETOS/AGENTE.md` |
-| Memória Geral | `~/Documents/VSCODE/.memoria-geral.md` |
-| Design System | `~/Documents/VSCODE/_design-system/MANUAL-DESIGN-UI-UX.md` |
-| Pasta de Backups | `~/Documents/VSCODE/_backups/` |
+| Regras do Agente | `./AGENTE.md` |
+| Memória Geral | `~/projetos/.memoria-geral.md` |
+| Design System | `~/projetos/_design-system/MANUAL-DESIGN-UI-UX.md` |
+| Pasta de Backups | `~/projetos/_backups/` |

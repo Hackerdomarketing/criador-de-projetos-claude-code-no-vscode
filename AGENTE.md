@@ -4,7 +4,7 @@
 
 Leia `ARQUITETURA-MENTAL.md` nesta pasta. Ele define como você processa informação e é a base de todo o seu comportamento antes de qualquer ação.
 
-Caminho: `~/Documents/VSCODE/CRIADOR-DE-PROJETOS/ARQUITETURA-MENTAL.md`
+Caminho: `./ARQUITETURA-MENTAL.md`
 
 ---
 
@@ -60,7 +60,7 @@ Antes de criar qualquer projeto, SEMPRE pergunte:
 Todo novo projeto DEVE seguir esta estrutura:
 
 ```
-~/Documents/VSCODE/
+~/projetos/
 └── nome-do-projeto/                         ← Nome em kebab-case (minúsculo, hífens)
     ├── ARQUITETURA-MENTAL.md                ← OBRIGATÓRIO — copiado do CRIADOR-DE-PROJETOS
     ├── CLAUDE.md                            ← OBRIGATÓRIO — gerado a partir do template
@@ -155,7 +155,7 @@ Hooks globais em ~/.claude/settings.json detectam tarefas completadas e injetam 
 ```markdown
 # Memória do Projeto - [NOME DO PROJETO]
 
-**Caminho:** `~/Documents/VSCODE/nome-do-projeto`
+**Caminho:** `~/projetos/nome-do-projeto`
 **Repositório:** `https://github.com/seu-usuario/nome-do-projeto`
 **Tipo:** [Tipo do projeto]
 **Criado em:** [DATA]
@@ -213,13 +213,13 @@ Hooks globais em ~/.claude/settings.json detectam tarefas completadas e injetam 
 
 ### Onde salvar:
 ```
-~/Documents/VSCODE/_backups/
+~/projetos/_backups/
 └── nome-do-projeto-backup-YYYYMMDD_HHMMSS/
 ```
 
 ### Como criar:
 ```bash
-cp -r ~/Documents/VSCODE/nome-do-projeto ~/Documents/VSCODE/_backups/nome-do-projeto-backup-$(date +%Y%m%d_%H%M%S)
+cp -r ~/projetos/nome-do-projeto ~/projetos/_backups/nome-do-projeto-backup-$(date +%Y%m%d_%H%M%S)
 ```
 
 ---
@@ -232,7 +232,7 @@ SEMPRE que criar um novo projeto, após criar a estrutura de arquivos:
 
 #### 1. Inicializar Git Local
 ```bash
-cd ~/Documents/VSCODE/nome-do-projeto
+cd ~/projetos/nome-do-projeto
 git init
 ```
 
@@ -301,8 +301,8 @@ ENV/
 ### Ordem de Execução
 
 1. Criar estrutura de pastas
-2. Copiar `ARQUITETURA-MENTAL.md` de `~/Documents/VSCODE/CRIADOR-DE-PROJETOS/ARQUITETURA-MENTAL.md` para a raiz do novo projeto
-3. Criar `CLAUDE.md` — copiar de `~/Documents/VSCODE/CRIADOR-DE-PROJETOS/templates/CLAUDE.md` e substituir `[DATA-ATUAL]` pela data real de hoje
+2. Copiar `ARQUITETURA-MENTAL.md` de `./ARQUITETURA-MENTAL.md` para a raiz do novo projeto
+3. Criar `CLAUDE.md` — copiar de `./templates/CLAUDE.md` e substituir `[DATA-ATUAL]` pela data real de hoje
 4. Criar `.memoria-ultimas-tarefas.md` — copiar de `templates/.memoria-ultimas-tarefas.md`
 5. Criar `.memoria-do-dia.md` — copiar de `templates/.memoria-do-dia.md`
 6. Criar `.memoria-projeto.md` — preencher com dados do projeto (nome, tipo, descrição, stack, etc.)
@@ -311,8 +311,8 @@ ENV/
 9. Criar `.env.example` (se usar variáveis de ambiente)
 9.5. **Instalar hooks de rastreamento** — Se o projeto vai usar Delta-11 (Score >= 5 ou usuário pediu):
    - Criar pasta `.claude/` no projeto
-   - Copiar `.claude/settings.json` de `~/Documents/VSCODE/Formacao-delta-11/.claude/settings.json`
-   - Criar pasta `.delta-11/hooks/` e copiar scripts de `~/Documents/VSCODE/Formacao-delta-11/.delta-11/hooks/`
+   - Copiar `.claude/settings.json` de `~/projetos/Formacao-delta-11/.claude/settings.json`
+   - Criar pasta `.delta-11/hooks/` e copiar scripts de `~/projetos/Formacao-delta-11/.delta-11/hooks/`
    - Criar pasta `.delta-11/locks/` com `.gitkeep`
    - Esses hooks garantem: lock de arquivos (previne conflito entre agentes), log de atividade em tempo real, e liberação automática de locks
    - **NOTA:** Os hooks da Inteligência Progressiva (busca automática, captura, curadoria) já são GLOBAIS em `~/.claude/settings.json` — não precisam ser instalados por projeto
@@ -344,7 +344,7 @@ gh auth status || gh auth login
 
 Após criar/modificar um projeto, SEMPRE atualizar:
 
-**Arquivo:** `~/Documents/VSCODE/.memoria-geral.md`
+**Arquivo:** `~/projetos/.memoria-geral.md`
 
 ### Adicionar ao Índice de Projetos:
 ```markdown
@@ -364,7 +364,7 @@ Após criar/modificar um projeto, SEMPRE atualizar:
 Após atualizar `.memoria-geral.md`, SEMPRE fazer commit e push:
 
 ```bash
-cd /Users/alfa/Documents/VSCODE
+cd ~/projetos
 git add .memoria-geral.md
 git commit -m "docs: registra projeto [nome-do-projeto]
 
@@ -395,7 +395,7 @@ Ao traduzir solicitações informais, usar:
 
 Antes de considerar o projeto criado, verificar:
 
-- [ ] Pasta criada em `~/Documents/VSCODE/`
+- [ ] Pasta criada em `~/projetos/`
 - [ ] Nome em kebab-case (minúsculo, hífens)
 - [ ] `ARQUITETURA-MENTAL.md` copiado para a raiz do projeto
 - [ ] `CLAUDE.md` criado (copiado do template com data real de hoje substituída)
@@ -411,8 +411,8 @@ Antes de considerar o projeto criado, verificar:
 - [ ] **Push inicial realizado**
 - [ ] **Link do repositório obtido e salvo**
 - [ ] Dependências instaladas (se aplicável)
-- [ ] Memória geral atualizada (incluindo link do repo)
 - [ ] Hooks globais de memoria ativos (verificar que ~/.claude/settings.json tem PreCompact e Stop com scripts de memoria)
+- [ ] Memória geral atualizada (incluindo link do repo)
 - [ ] Backup criado (se projeto existente modificado)
 
 ---
@@ -452,6 +452,6 @@ Antes de considerar o projeto criado, verificar:
 ## REGRAS DE DESIGN (SE HOUVER UI)
 
 Antes de qualquer trabalho visual:
-1. **LER:** `~/Documents/VSCODE/_design-system/MANUAL-DESIGN-UI-UX.md`
+1. **LER:** `~/projetos/_design-system/MANUAL-DESIGN-UI-UX.md`
 2. Seguir padrões de cores e componentes
 3. Passar pelo checklist do manual ao finalizar
